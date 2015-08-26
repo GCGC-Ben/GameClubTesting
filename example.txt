@@ -2,6 +2,7 @@
 
 よろしくね。 イゾリンよ。 僕の仕事は…まぁ、提督が仕事だよね、うん。
 <<<<<<< HEAD
+<<<<<<< HEAD
 少し退屈よ～。
 
 Ben likes men more.
@@ -10,3 +11,9 @@ Ben likes men more.
 
 hello is this working i am evan again yay again。
 >>>>>>> 50fd131b83a761ca90eb95e58561c54d237e7d53
+=======
+Yoroshiku ne. Izolyn yo. Boku no shigoto wa...maa, teitoku ga shigotodo yo ne, un.
+少し退屈よ～。
+
+hello is this working i am evan again yay again.
+>>>>>>> 490e199c2765e5f8fa9e4adebaf5a110653f8ce0
