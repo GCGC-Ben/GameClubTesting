@@ -1,6 +1,12 @@
 ﻿hello i am evan yay
 
 よろしくね。 イゾリンよ。 僕の仕事は…まぁ、提督が仕事だよね、うん。
+<<<<<<< HEAD
 少し退屈よ～。
 
 Ben likes men more.
+=======
+少し退屈よ～
+
+hello is this working i am evan again yay again。
+>>>>>>> 50fd131b83a761ca90eb95e58561c54d237e7d53
