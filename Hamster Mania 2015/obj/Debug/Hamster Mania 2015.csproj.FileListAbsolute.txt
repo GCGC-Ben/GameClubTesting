@@ -6,3 +6,11 @@ C:\Users\Ben\documents\visual studio 2015\Projects\Hamster Mania 2015\Hamster Ma
 C:\Users\Ben\documents\visual studio 2015\Projects\Hamster Mania 2015\Hamster Mania 2015\obj\Debug\Hamster Mania 2015.csprojResolveAssemblyReference.cache
 C:\Users\Ben\documents\visual studio 2015\Projects\Hamster Mania 2015\Hamster Mania 2015\obj\Debug\Hamster Mania 2015.exe
 C:\Users\Ben\documents\visual studio 2015\Projects\Hamster Mania 2015\Hamster Mania 2015\obj\Debug\Hamster Mania 2015.pdb
+C:\GCGC\Hamster Mania 2015\bin\Debug\Hamster Mania 2015.exe.config
+C:\GCGC\Hamster Mania 2015\obj\Debug\Hamster Mania 2015.exe
+C:\GCGC\Hamster Mania 2015\obj\Debug\Hamster Mania 2015.pdb
+C:\GCGC\Hamster Mania 2015\bin\Debug\Hamster Mania 2015.exe
+C:\GCGC\Hamster Mania 2015\bin\Debug\Hamster Mania 2015.pdb
+C:\GCGC\Hamster Mania 2015\bin\Debug\SdlDotNet.dll
+C:\GCGC\Hamster Mania 2015\bin\Debug\Tao.Sdl.dll
+C:\GCGC\Hamster Mania 2015\obj\Debug\Hamster Mania 2015.csprojResolveAssemblyReference.cache
