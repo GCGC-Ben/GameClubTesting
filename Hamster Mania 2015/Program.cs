@@ -31,8 +31,8 @@ namespace Hamster_Mania_2015
         }
         private static void LoadImages()
         {
-            m_Background = (new Surface(Path.Combine("Content","jackson.png")).Convert(m_VideoScreen, true, false);
-            m_Foreground = (new Surface(Path.Combine("Content","jackson.png")).Convert(m_VideoScreen, true, false);
+            m_Background = (new Surface(Path.Combine("Content","jackson.png"))).Convert(m_VideoScreen, true, false);
+            m_Foreground = (new Surface(Path.Combine("Content","jackson.png"))).Convert(m_VideoScreen, true, false);
             m_Foreground.Transparent = true;
             m_Foreground.TransparentColor = Color.FromArgb(255, 0, 255);
             m_ForegroundPosition = new Point(m_VideoScreen.Width / 2 - m_Foreground.Width / 2,
