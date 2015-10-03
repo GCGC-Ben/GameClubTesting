@@ -2,8 +2,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <time.h>
+#include <vector>
+#include "ParticleManager.h"
 
-static int FPS;
+
+static double FPS;
 static double secondsFPS;
 static double oldTime; 
 
@@ -11,38 +14,38 @@ using namespace sf;
 
 bool update()
 {
-	time_t timer;
-	time(&timer);
-	secondsFPS = timer -oldTime;
+	clock_t timer;
+	timer = clock();
 
-	if (secondsFPS > 1)
+	double nTime = timer - oldTime;
+	if (nTime > 600)
 	{
-		std::cout <<"Update FPS:"<< FPS<<"\n";
+		std::cout <<"Update FPS:"<< FPS << "\n";
 		oldTime = timer;
 		FPS = 0;
 	}
+	
 	FPS++;
 
-	if (FPS == 60)
+	if (nTime < (FPS * 10))
 	{
-		Time t = seconds(2 - secondsFPS);
+		Time t = milliseconds((FPS * 10)-nTime);
 		sleep(t);
 	}
+
+
+	
 	
 	//put update code below
-
-
 
 	return true;
 }
 
-bool draw(RenderWindow &window)
+bool draw(RenderWindow& window)
 {
 	window.clear();
 	//put draw code below;
-		sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-	window.draw(shape);
+	ParticleManager::draw(window);
 
 	//keep this at bottem
 	window.display();
@@ -54,15 +57,17 @@ bool draw(RenderWindow &window)
 int main()
 {
 	FPS = 0;
-	time_t timer;
-	time(&timer);
+	clock_t timer;
+	timer = clock();
 	oldTime = timer;
 
-	sf::RenderWindow window(sf::VideoMode(1280,  720), "HamsterMain");
+	RenderWindow window(sf::VideoMode(1280,  720), "HamsterMaina");
 
 	enum GameState {Menu,Arena,Paused};
 	GameState cgs = Arena;
-
+	//load methods here
+	ParticleManager::load();
+	//load methods above
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -73,6 +78,11 @@ int main()
 		}
 
 		update();
+		
+		Vector2f pos(rand() % 100 + Mouse::getPosition().x - 50, rand() % 100 + Mouse::getPosition().y - 50);
+
+		ParticleManager::add(pos);
+
 		draw(window);
 	}
 
