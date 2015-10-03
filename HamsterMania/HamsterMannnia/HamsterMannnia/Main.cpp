@@ -4,11 +4,12 @@
 #include <time.h>
 #include <vector>
 #include "ParticleManager.h"
-
+#include "Player.hpp"
 
 static double FPS;
 static double secondsFPS;
 static double oldTime; 
+Player p1(1, Vector2f(10, 10), sf::Keyboard::Up, sf::Keyboard::Left, sf::Keyboard::Right);
 
 using namespace sf;
 
@@ -20,7 +21,10 @@ bool update()
 	double nTime = timer - oldTime;
 	if (nTime > 600)
 	{
-		std::cout <<"Update FPS:"<< FPS << "\n";
+		if (FPS < 50)
+		{
+			std::cout << "LOW FPS" << FPS << "\n";
+		}
 		oldTime = timer;
 		FPS = 0;
 	}
@@ -34,9 +38,10 @@ bool update()
 	}
 
 
-	
-	
+
 	//put update code below
+	ParticleManager::update();
+	p1.update();
 
 	return true;
 }
@@ -46,7 +51,7 @@ bool draw(RenderWindow& window)
 	window.clear();
 	//put draw code below;
 	ParticleManager::draw(window);
-
+	p1.draw(window);
 	//keep this at bottem
 	window.display();
 	return true;
@@ -67,6 +72,8 @@ int main()
 	GameState cgs = Arena;
 	//load methods here
 	ParticleManager::load();
+	Player::load();
+	p1.make_sprite();
 	//load methods above
 	while (window.isOpen())
 	{
@@ -79,9 +86,13 @@ int main()
 
 		update();
 		
-		Vector2f pos(rand() % 100 + Mouse::getPosition().x - 50, rand() % 100 + Mouse::getPosition().y - 50);
+		Vector2f pos(rand() % 100 + Mouse::getPosition().x - 200, rand() % 100 + Mouse::getPosition().y - 200);
 
-		ParticleManager::add(pos);
+		ParticleManager::add(pos, Color(rand() % 255, rand() % 255, rand() % 255, 255));
+
+		Vector2f pos2(rand() % 100 + Mouse::getPosition().x - 200, rand() % 100 + Mouse::getPosition().y - 200);
+
+		ParticleManager::add(pos2, Color(rand() % 255, rand() % 255, rand() % 255, 255));
 
 		draw(window);
 	}
