@@ -71,6 +71,8 @@ class Player {
         /*
             Constructer 
         */
+        Player();
+        Player(float _mass, sf::Vector2f& _position_vector);
         Player(float _mass, sf::Vector2f& _position_vector, sf::Keyboard::Key _up, sf::Keyboard::Key _left, sf::Keyboard::Key _right);
 
 

@@ -9,7 +9,7 @@
 static double FPS;
 static double secondsFPS;
 static double oldTime; 
-Player p1(1, Vector2f(10, 10), sf::Keyboard::Up, sf::Keyboard::Left, sf::Keyboard::Right);
+//Player p1(1, Vector2f(10, 10), sf::Keyboard::Up, sf::Keyboard::Left, sf::Keyboard::Right);
 
 using namespace sf;
 
@@ -41,7 +41,7 @@ bool update()
 
 	//put update code below
 	ParticleManager::update();
-	p1.update();
+	//p1.update();
 
 	return true;
 }
@@ -51,7 +51,7 @@ bool draw(RenderWindow& window)
 	window.clear();
 	//put draw code below;
 	ParticleManager::draw(window);
-	p1.draw(window);
+	//p1.draw(window);
 	//keep this at bottem
 	window.display();
 	return true;
@@ -72,8 +72,8 @@ int main()
 	GameState cgs = Arena;
 	//load methods here
 	ParticleManager::load();
-	Player::load();
-	p1.make_sprite();
+	//Player::load();
+	//p1.make_sprite();
 	//load methods above
 	while (window.isOpen())
 	{
