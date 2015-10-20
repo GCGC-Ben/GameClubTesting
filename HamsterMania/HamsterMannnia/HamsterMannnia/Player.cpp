@@ -14,12 +14,16 @@ using namespace sf;
 /*
     Constructer 
 */
+Player::Player() : Player::Player(1, Vector2f(0, 0), Keyboard::Up, Keyboard::Left, Keyboard::Right) { }
+
+Player::Player(float _mass, Vector2f& _position_vector) : Player::Player(1, Vector2f(0, 0), Keyboard::Up, Keyboard::Left, Keyboard::Right) { }
+
 Player::Player(float _mass, Vector2f& _position_vector, Keyboard::Key _up, Keyboard::Key _left, Keyboard::Key _right) {
     // initialize loaded
     loaded = false;
     
     // initialize player vars
-    mass          = _mass;
+    set_mass(_mass);
     
     // initialize vars that determine launch distance
     charge = facing_direction = 0;
@@ -28,18 +32,16 @@ Player::Player(float _mass, Vector2f& _position_vector, Keyboard::Key _up, Keybo
     movement_direction = movement_magnitude = 0;
 
     // initialize vectors (float type)
-    position_vector = Vector2f(_position_vector);
+    set_position(_position_vector);
     movement_vector = Vector2f(0.f, 0.f);
     charged_vector  = Vector2f(0.f, 0.f);
     
     // set key bindings
     // -- would have to be modified for controller functionality
     // -- would also have to modify controls()
-	keyBindings = decltype(keyBindings){
-        { 'U', _up},   // up
-        { 'L', _left}, // left
-        { 'R', _right} // right
-    };
+	set_key_binding('U', _up);
+    set_key_binding('L', _left);
+    set_key_binding('R', _right);
 }
 
 
