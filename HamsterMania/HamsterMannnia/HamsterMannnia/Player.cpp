@@ -107,6 +107,7 @@ void Player::draw(RenderWindow& render_window) {
 void Player::make_sprite() {
     if(loaded)
         sprite.setTexture(texture);
+        sprite.setOrigin(100, 100);
     else
         std::cout << "Error: initializing sprite before load method called (no texture)" << std::endl;
 }
