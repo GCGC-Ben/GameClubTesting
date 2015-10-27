@@ -9,7 +9,7 @@ class Player {
     private:
         // const vars
         const float FRICTION   = 0.005;
-        const float ROTATE     = (std::atan(1) * 4) / 512; // (pi / 32);
+        const float ROTATE     = (std::atan(1) * 4) / 256; // (pi / 32);
         const float ELASTICITY = 0.85;
         
         // player vars

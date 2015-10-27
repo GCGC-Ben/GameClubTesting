@@ -105,11 +105,12 @@ void Player::draw(RenderWindow& render_window) {
     Make the spite thing (must call after loading)
 */
 void Player::make_sprite() {
-    if(loaded)
+    if(loaded) {
         sprite.setTexture(texture);
         sprite.setOrigin(100, 100);
-    else
+    } else {
         std::cout << "Error: initializing sprite before load method called (no texture)" << std::endl;
+    }
 }
 
 /*
@@ -165,7 +166,7 @@ void Player::collision(Player& p1, Player& p2) {
 void Player::controls() {
     // handle charge input
     if(Keyboard::isKeyPressed(keyBindings['U']))
-        charge += 0.05;
+        charge += 0.5;
     
     // handle directional input
     if(Keyboard::isKeyPressed(keyBindings['L'])) {
