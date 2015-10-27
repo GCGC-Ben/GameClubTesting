@@ -42,6 +42,9 @@ Player::Player(float _mass, Vector2f& _position_vector, Keyboard::Key _up, Keybo
 	set_key_binding('U', _up);
     set_key_binding('L', _left);
     set_key_binding('R', _right);
+    
+    //initizlize charging
+    is_charging = false;
 }
 
 

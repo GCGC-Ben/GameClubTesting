@@ -20,7 +20,7 @@ class Player {
         sf::Sprite sprite;
 
         // vars that determine launch distance
-        float charge, facing_direction;
+        float charge, facing_direction, is_charging;
 
         // vars set by recalibrate methods
         float movement_direction, movement_magnitude;
