@@ -9,7 +9,7 @@
 static double FPS;
 static double secondsFPS;
 static double oldTime; 
-//Player p1(1, Vector2f(10, 10), sf::Keyboard::Up, sf::Keyboard::Left, sf::Keyboard::Right);
+Player p1(1, Vector2f(10, 10), sf::Keyboard::Up, sf::Keyboard::Left, sf::Keyboard::Right);
 
 using namespace sf;
 
