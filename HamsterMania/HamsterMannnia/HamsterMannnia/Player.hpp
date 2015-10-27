@@ -9,7 +9,7 @@ class Player {
     private:
         // const vars
         const float FRICTION   = 0.005;
-        const float ROTATE     = (std::atan(1) * 4) / 32; // (pi / 32);
+        const float ROTATE     = (std::atan(1) * 4) / 512; // (pi / 32);
         const float ELASTICITY = 0.85;
         
         // player vars
@@ -18,7 +18,6 @@ class Player {
         // draw vars
         static sf::Texture texture;
         sf::Sprite sprite;
-        sf::Transform transform;
 
         // vars that determine launch distance
         float charge, facing_direction;

@@ -98,7 +98,7 @@ void Player::load() {
     DRAW
 */
 void Player::draw(RenderWindow& render_window) {
-    render_window.draw(sprite, transform);
+    render_window.draw(sprite);
 }
 
 /*
@@ -118,7 +118,7 @@ void Player::update() {
     controls();
     movement();
     sprite.setPosition(position_vector);
-    transform.rotate(facing_direction * (180 / (std::atan(1) * 4)));
+    sprite.setRotation(facing_direction);
 }
 
 
