@@ -7,11 +7,17 @@ namespace MOTB
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
+    /// 
+   
+
     public class Game1 : Game
     {
+        enum State { MMENU, OVERWORLD, BATTLE };
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        State currentState = State.MMENU;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -40,6 +46,7 @@ namespace MOTB
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -63,6 +70,22 @@ namespace MOTB
                 Exit();
 
             // TODO: Add your update logic here
+            switch (currentState)
+            {
+                case State.MMENU:
+
+                    break;
+                case State.OVERWORLD:
+
+                    break;
+                case State.BATTLE:
+
+                    break;
+                default:
+
+                    break;
+
+            }
 
             base.Update(gameTime);
         }
@@ -75,6 +98,22 @@ namespace MOTB
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            switch (currentState)
+            {
+                case State.MMENU:
+
+                    break;
+                case State.OVERWORLD:
+
+                    break;
+                case State.BATTLE:
+
+                    break;
+                default:
+
+                    break;
+
+            }
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

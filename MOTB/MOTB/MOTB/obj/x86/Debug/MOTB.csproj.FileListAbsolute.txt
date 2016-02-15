@@ -5,3 +5,10 @@ C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\OpenTK.dll
 C:\GCGC\MOTB\MOTB\MOTB\obj\x86\Debug\MOTB.csprojResolveAssemblyReference.cache
 C:\GCGC\MOTB\MOTB\MOTB\obj\x86\Debug\MOTB.exe
 C:\GCGC\MOTB\MOTB\MOTB\obj\x86\Debug\MOTB.pdb
+C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\obj\x86\Debug\MOTB.exe
+C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\MOTB.exe
+C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\MOTB.pdb
+C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\obj\x86\Debug\MOTB.csprojResolveAssemblyReference.cache
+C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\obj\x86\Debug\MOTB.pdb
