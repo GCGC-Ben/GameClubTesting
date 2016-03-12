@@ -29,7 +29,6 @@ namespace MOTB
 
         }
 
-
         public void Draw(SpriteBatch sb)
         {
             //draw all the buttons in the ArrayList for buttons
