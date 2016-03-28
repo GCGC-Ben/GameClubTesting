@@ -4,37 +4,60 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 
 
 namespace MOTB
 {
     class Menu
     {
-        List<Button> buttons = new List<Button>();
+        private List<Rectangle> buttonList;
 
-        //not sure what is all needed for an average menu
-        public Menu()
+        static Texture2D buttonTxt;
+
+        public Menu(Vector2 origin, int numButtons, List<Rectangle> buttonNumbers)
         {
+            buttonList = new List<Rectangle>();
 
+            // fill in buttonList
+            Rectangle temp;
+            for (int i = 0; i < numButtons; i++)
+            {
+                buttonList.Add(new Rectangle(buttonNumbers.ElementAt(i).X, buttonNumbers.ElementAt(i).Y, buttonNumbers.ElementAt(i).Width, buttonNumbers.ElementAt(i).Height));
+            }
         }
 
-        public void addButton(Texture2D buttonTxt, Vector2 buttonPos, Color col)
+        public static void loadButton(ContentManager content)
         {
-            Button button = new Button(buttonTxt, buttonPos, col);
-            buttons.Add(button);
+            buttonTxt = content.Load<Texture2D>("whiteTest");
         }
 
-        public void Update(){
-            
+        public static Texture2D getButtonTxt()
+        {
+            return buttonTxt;
+        }
 
+        //finds if a button is clicked and returns the number of that button
+        public int update()
+        {
+            int i = 0;
+            foreach (Rectangle rec in buttonList)
+            {
+                if (rec.Intersects(new Rectangle(Mouse.GetState().Position.X, Mouse.GetState().Position.Y, 10, 10)))
+                {
+                    return i;
+                }
+                i++;
+            }
+            return -1;
         }
 
         public void Draw(SpriteBatch sb)
         {
-            //draw all the buttons in the ArrayList for buttons
-            foreach (Button button in buttons)
+            foreach (Rectangle rec in buttonList)
             {
-                button.Draw(sb);
+                sb.Draw(buttonTxt, rec, rec, Color.White, 0f, new Vector2(buttonTxt.Width / 2, 0),SpriteEffects.None,.4f);
             }
         }
     }

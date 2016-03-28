@@ -1,6 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace MOTB
 {
@@ -16,6 +20,16 @@ namespace MOTB
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        BattleManager battleMan;
+
+        Unit princess;
+        Unit testEnemy;
+
+        Texture2D princessTxt;
+        Texture2D mouseTxt;
+
+        List<Unit> heroes = new List<Unit>();
+        List<Unit> enemies = new List<Unit>();
 
         State currentState = State.MMENU;
         public Game1()
@@ -44,9 +58,19 @@ namespace MOTB
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
+            
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            battleMan = new BattleManager();
 
-
+            Menu.loadButton(Content);
+          
+            princessTxt = Content.Load<Texture2D>("whiteTest");
+            mouseTxt = Content.Load<Texture2D>("mouse");
+            princess = new Unit("Palette", new Vector2(200, 150), princessTxt, Color.AntiqueWhite);
+            testEnemy = new Unit("TestE", new Vector2(400,150), princessTxt, Color.Red);
+            heroes.Add(princess);
+            enemies.Add(testEnemy);
+            battleMan.startBattle(heroes, enemies);
             // TODO: use this.Content to load your game content here
         }
 
@@ -68,6 +92,13 @@ namespace MOTB
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            if (Keyboard.GetState().IsKeyDown(Keys.B))
+            {
+                currentState = State.BATTLE;
+                
+                battleMan.startBattle(heroes,enemies);
+            }
 
             // TODO: Add your update logic here
             switch (currentState)
@@ -97,7 +128,9 @@ namespace MOTB
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin(SpriteSortMode.BackToFront);
+            //draw the mouse
+            spriteBatch.Draw(mouseTxt, new Vector2(Mouse.GetState().Position.X, Mouse.GetState().Position.Y), null, Color.White, 0f, new Vector2(mouseTxt.Width / 2, 0), 1f, SpriteEffects.None, 0f);
             switch (currentState)
             {
                 case State.MMENU:
@@ -107,7 +140,7 @@ namespace MOTB
 
                     break;
                 case State.BATTLE:
-
+                    battleMan.draw(spriteBatch);
                     break;
                 default:
 
@@ -115,7 +148,7 @@ namespace MOTB
 
             }
             // TODO: Add your drawing code here
-
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

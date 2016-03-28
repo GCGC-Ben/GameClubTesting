@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MOTB
 {
-    class DialogueBox : Menu
+    class DialogueBox
     {
         String[][] dialogue;
         Texture2D[] heroes;
