@@ -22,8 +22,10 @@ namespace MOTB
         Texture2D hTxt;
         //might need to change this if we add equipment to the game
         static Texture2D swordTxt;
+        float rot = 0f;
 
         Vector2 pos;
+        Vector2 swPos;
         Color c;
         String statusEffect = "";
 
@@ -40,6 +42,7 @@ namespace MOTB
             pos = unitPos;
             hTxt = txt;
             c = currentCol;
+            swPos = new Vector2(unitPos.X+5,unitPos.Y+5);
         }
 
         public Vector2 getPos()
@@ -63,6 +66,7 @@ namespace MOTB
         public void swingSword()
         {
             //swanging swods
+            rot++;
         }
 
         //adds a battle move to the list
@@ -79,6 +83,7 @@ namespace MOTB
         public void Draw(SpriteBatch sb)
         {
             sb.Draw(hTxt, pos, null, c, 0f, new Vector2(hTxt.Width / 2, 0), 1f, SpriteEffects.None, .4f);
+            sb.Draw(swordTxt, swPos, null, c, rot, new Vector2(swordTxt.Width / 2, swordTxt.Height/2), 1f, SpriteEffects.None, .3f);
         }
     }
 }
