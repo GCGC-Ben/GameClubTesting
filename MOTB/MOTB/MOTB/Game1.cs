@@ -67,7 +67,7 @@ namespace MOTB
             princessTxt = Content.Load<Texture2D>("whiteTest");
             mouseTxt = Content.Load<Texture2D>("mouse");
             princess = new Unit("Palette", new Vector2(200, 150), princessTxt, Color.AntiqueWhite);
-            testEnemy = new Unit("TestE", new Vector2(400,150), princessTxt, Color.Red);
+            testEnemy = new Unit("TestE", new Vector2(400,150), princessTxt, Color.AntiqueWhite);
             heroes.Add(princess);
             enemies.Add(testEnemy);
             battleMan.startBattle(heroes, enemies);

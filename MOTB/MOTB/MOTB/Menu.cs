@@ -21,7 +21,6 @@ namespace MOTB
             buttonList = new List<Rectangle>();
 
             // fill in buttonList
-            Rectangle temp;
             for (int i = 0; i < numButtons; i++)
             {
                 buttonList.Add(new Rectangle(buttonNumbers.ElementAt(i).X, buttonNumbers.ElementAt(i).Y, buttonNumbers.ElementAt(i).Width, buttonNumbers.ElementAt(i).Height));
@@ -30,7 +29,7 @@ namespace MOTB
 
         public static void loadButton(ContentManager content)
         {
-            buttonTxt = content.Load<Texture2D>("whiteTest");
+            buttonTxt = content.Load<Texture2D>("buttons");
         }
 
         public static Texture2D getButtonTxt()
@@ -39,6 +38,7 @@ namespace MOTB
         }
 
         //finds if a button is clicked and returns the number of that button
+        //dont think I should put this in update
         public int update()
         {
             int i = 0;
@@ -57,7 +57,7 @@ namespace MOTB
         {
             foreach (Rectangle rec in buttonList)
             {
-                sb.Draw(buttonTxt, rec, rec, Color.White, 0f, new Vector2(buttonTxt.Width / 2, 0),SpriteEffects.None,.4f);
+                sb.Draw(buttonTxt, rec, rec, Color.White, 0f, new Vector2(buttonTxt.Width / 2, 0),SpriteEffects.None,.3f);
             }
         }
     }
