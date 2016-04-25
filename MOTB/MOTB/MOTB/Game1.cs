@@ -15,9 +15,16 @@ namespace MOTB
         enum State { MMENU, OVERWORLD, BATTLE };
 
         GraphicsDeviceManager graphics;
+        GraphicsDevice device;
+        
         SpriteBatch spriteBatch;
 
-        State currentState = State.MMENU;
+        State currentState = State.OVERWORLD;
+
+        Camera2d cam;
+        OverWorldPlayer p1;
+        World cWorld;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -32,9 +39,16 @@ namespace MOTB
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            cam = new Camera2d();
+            p1 = new OverWorldPlayer(Color.White, new Vector2(100, 500), new Vector2(0, 0));
+
+            this.Window.Title = "Will likes Dicks";
+            graphics.PreferredBackBufferWidth = 1280;//720p
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.ApplyChanges();
 
             base.Initialize();
+            cWorld = new World("1");
         }
 
         /// <summary>
@@ -43,11 +57,9 @@ namespace MOTB
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-
-            // TODO: use this.Content to load your game content here
+            OverWorldPlayer.load(Content);
+            World.load(Content);
         }
 
         /// <summary>
@@ -56,7 +68,7 @@ namespace MOTB
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+
         }
 
         /// <summary>
@@ -69,19 +81,34 @@ namespace MOTB
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
             switch (currentState)
             {
                 case State.MMENU:
 
                     break;
                 case State.OVERWORLD:
+                    p1.update(cWorld);
 
+                    if (p1.pos.X > 650)
+                    {
+                        cam._pos.X = p1.pos.X;
+                    }
+                    else
+                    {
+                        cam._pos.X = 650;
+                    }
+                    if (p1.pos.Y < 1235)
+                    {
+                        cam._pos.Y = p1.pos.Y;
+                    }
+                    else
+                    {
+                        cam._pos.Y = 1235;
+                    }
+
+                    cWorld.update(cWorld);
                     break;
                 case State.BATTLE:
-
-                    break;
-                default:
 
                     break;
 
@@ -101,16 +128,20 @@ namespace MOTB
             switch (currentState)
             {
                 case State.MMENU:
+                    spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(device));
 
+                    spriteBatch.End();
                     break;
                 case State.OVERWORLD:
-
+                    spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(device));
+                    p1.draw(spriteBatch);
+                    cWorld.draw(spriteBatch,cam.Pos);
+                    spriteBatch.End();
                     break;
                 case State.BATTLE:
-
-                    break;
-                default:
-
+                    spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.get_transformation(device));
+                    
+                    spriteBatch.End();
                     break;
 
             }

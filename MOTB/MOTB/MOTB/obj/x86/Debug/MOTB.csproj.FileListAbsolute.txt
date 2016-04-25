@@ -12,3 +12,15 @@ C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\
 C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\obj\x86\Debug\MOTB.csprojResolveAssemblyReference.cache
 C:\Users\nosk1_000\Documents\GameClubTesting\MOTB\MOTB\MOTB\obj\x86\Debug\MOTB.pdb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Fonts\Font1.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Level\Level1.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Level\Level2.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Player\Rat.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\blackness.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\Cloud.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\Cloud2.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\Dirt.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\DirtBottem.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\finshline.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\plat.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\Rock.xnb
