@@ -38,8 +38,8 @@ namespace MOTB
 
         public static void load(ContentManager content)
         {
-            txt = content.Load<Texture2D>("Player\\rat");
-            font = content.Load<SpriteFont>("Fonts\\Font1");
+            txt = content.Load<Texture2D>("Player/rat");
+            font = content.Load<SpriteFont>("Fonts/Font1");
         }
 
         public void makePlayerControled()

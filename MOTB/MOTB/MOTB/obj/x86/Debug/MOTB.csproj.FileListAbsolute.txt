@@ -24,3 +24,4 @@ C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\DirtBottem.xnb
 C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\finshline.xnb
 C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\plat.xnb
 C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\Tiles\Rock.xnb
+C:\GCGC\MOTB\MOTB\MOTB\bin\WindowsGL\Debug\Content\PP.xnb
